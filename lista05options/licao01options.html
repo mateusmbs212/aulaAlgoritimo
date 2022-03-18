@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Combo
+    <select  id="marcearia">
+        <option value="o ovo custa R$ 10.00 reais a cartela">Ovos</option>
+        <option value="o leite custa R$ 2.50">Leite</option>
+        <option value="a farinha custa R$ 5.00 o saco">farinha</option>
+        <option value="o açucar custa R$ 2.27">Açucar</option>
+    </select> 
+
+    <button onclick="mostrar_preco()">Preço</button>
+</body>
+</html>
+<script>
+    function mostrar_preco() {
+        var preco = marcearia.value;
+
+        alert(`${preco}`);
+    }
+</script>

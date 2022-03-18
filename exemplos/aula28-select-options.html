@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Seleção do humor</h2>
+
+    Qual o seu humor de manhã
+    <select  id="lista_humor">
+        <option value="Não enche!!">Péssimo</option>
+        <option value="Oque você quer ?!">Não muito bom</option>
+        <option value="Oi">Neutro</option>
+        <option value="Olá, diga parça">Bom</option>
+        <option value="Olá a vida é bela">Ótimo</option>
+    </select> <br><br>
+    
+
+    <button onclick="mostrar_humor()">Como você está ?</button>
+</body>
+</html>
+<script>
+    function mostrar_humor() {
+        var meu_humor = lista_humor.value;
+
+        alert(`Quando te chamarem vai responder: ${meu_humor}`);
+    }
+</script>

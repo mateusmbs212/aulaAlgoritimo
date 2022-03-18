@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Atrações
+    <select  id="atracoes">
+        <option value="Marley e Eu">Cinema</option>
+        <option value="O fantasma da ópera">Teatro</option>
+        <option value="Hopi Hari">Parque</option>
+        <option value="Lady Gaga">Show</option>
+    </select> 
+
+    <button onclick="mostrar_atracao()">Ver atração</button>
+</body>
+</html>
+<script>
+    function mostrar_atracao() {
+        var atracao = atracoes.value;
+
+        alert(`${atracao}`);
+    }
+</script>
