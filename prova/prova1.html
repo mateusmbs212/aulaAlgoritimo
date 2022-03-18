@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Opções de férias gastando pouco</h1> <br><br>
+    <button onclick="campo()">campo</button>
+    <button onclick="praia()">praia</button>
+    <button onclick="cidade()">cidade</button> <br><br>
+    <span id="mostrartela"></span>
+</body>
+</html>
+<script>
+    function campo() {
+       mostrartela.innerHTML = `<img style="height: 150px;" src="campo.jpg"> <br> <span style="background-color: brown; color: white;">Campo Belo foi considerado o bairro campeão em roubo e furto a residências</span>`
+    }
+    function praia() {
+        mostrartela.innerHTML = `<img style="height: 150px;" src="praia.jpg"><br> <i style="color: red;">Os moradores da Vila Praia se mobilizaram para manter a UBS ativa no bairro</i> `
+    }
+    function cidade() {
+        mostrartela.innerHTML = `<img style="height: 150px;" src="cidade.jpg"> <br>  <span style="background-color: yellow;">A Cidade Tiradentes teve a menor taxa de emprego formal da Capital de São Paulo</span>`
+    }
+</script>

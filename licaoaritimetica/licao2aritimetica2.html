@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex02</title>
+</head>
+<body>
+    <h2>Equipe Lantra</h2>
+    <br><br>
+    Valor da Pizza:
+    <input id="ipt_pizza" autofocus>
+    <br>
+    Quantida de amigos:
+   <input id="ipt_amigo">
+    <br>
+    <button onclick="mostrar()">#LovePizza</button> <br><br> 
+    <span id="mostrartela"></span> <br>
+</body>
+</html>
+<script>
+    function mostrar() {
+        alert (`Cada um dos ${ipt_amigo.value} vai pagar R$${ipt_pizza.value / ipt_amigo.value} `);
+    }
+</script>

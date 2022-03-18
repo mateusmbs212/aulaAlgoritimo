@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Barraca de bananas ANANAB</h1> <br><br>
+
+    digite quantidade de bananas que deseja comprar:
+    <input id="qtd_banana"> <br><br>
+
+    <button onclick="bananaprata()">Banana Prata</button>
+    <button onclick="bananananica()">Banana nanica</button>
+</body>
+</html>
+<script>
+    function bananaprata() {
+        alert(`Você comprou ${qtd_banana.value} unidades de Bananas Prata e o custo total é R$ ${qtd_banana.value * 0.60}`);
+    }
+    function bananananica() {
+        alert(`Você comprou ${qtd_banana.value} unidades de Bananas Nanica e o custo total é R$ ${qtd_banana.value * 0.50}`);
+    }
+</script>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Tabuada</h2> <br>
+    Digite um número:
+    <input type="text" id="tabuadanumb">  <br>
+    <button onclick="verTabuada()">Ver Tabuada</button> <br> <br>
+    <span id="mostrartela"></span>
+</body>
+</html>
+<script>
+    function verTabuada() {
+        var tabuada_ = tabuadanumb.value;
+        var tabuada1 =  tabuadanumb.value * 1;
+        var tabuada2 =  tabuadanumb.value * 2;
+        var tabuada3 =  tabuadanumb.value * 3;
+        var tabuada4 =  tabuadanumb.value * 4;
+        var tabuada5 =  tabuadanumb.value * 5;
+        var tabuada6 =  tabuadanumb.value * 6;
+        var tabuada7 =  tabuadanumb.value * 7;
+        var tabuada8 =  tabuadanumb.value * 8;
+        var tabuada9 =  tabuadanumb.value * 9;
+
+
+        mostrartela.innerHTML = `${tabuada_}x1 = ${tabuada1} <br> ${tabuada_}x2 = ${tabuada2} <br>  
+                                 ${tabuada_}x3 = ${tabuada3} <br> ${tabuada_}x4 = ${tabuada4} <br> 
+                                 ${tabuada_}x5 = ${tabuada5} <br> ${tabuada_}x6 = ${tabuada6} <br> 
+                                 ${tabuada_}x7 = ${tabuada7} <br> ${tabuada_}x8 = ${tabuada8} <br> 
+                                 ${tabuada_}x9 = ${tabuada9} `;
+    }
+</script>

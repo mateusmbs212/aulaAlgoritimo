@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Calcular frequência</h2> <br><br>
+    Digite seu nome:
+    <input id="nome_aluno"> <br>
+    Quantida de aulas total:
+    <input id="aula_total"> <br>
+    Digite suas faltas:
+    <input id="falta"> <br> <br>
+
+    <button onclick="calc_frequencia()">calcular média de frequência</button> <br><br>
+    <span id="mostrartela"></span> <br><br>
+    <div id="coloracao" style="height: 25px; background-color: red;"></div>
+   
+</body>
+</html>
+<script>
+    function calc_frequencia() {
+        var frequencia = (aula_total.value - falta.value) / aula_total.value * 100;
+        var nome = nome_aluno.value;
+
+        mostrartela.innerHTML = `<span style="color: blue;">Olá, ${nome}! Sua frequência foi de <b style="color: green;">${frequencia.toFixed(1)}%</b></span>`;
+        coloracao.style.width = ` ${frequencia}%`;
+    }
+</script>

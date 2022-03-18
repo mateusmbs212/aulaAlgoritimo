@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <span id="sinalText"></span> <br><br>
+    <button onclick="Pare()">Pare</button> <br><br>
+    <button onclick="Pense()">Pense</button> <br><br>
+    <button onclick="Siga()">Siga</button> <br><br>
+</body>
+</html>
+
+<script>
+    function Pare() {
+        sinalText.innerHTML = 'Pare e aguarde !'
+    }
+
+    function Pense() {
+        sinalText.innerHTML = 'Pense se deve seguir ou deve parar !'
+    }
+
+    function Siga() {
+        sinalText.innerHTML = 'Pode seguir adiante!'
+    }
+</script>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Programa auxilio</h2><br><br>
+
+    Filho com idade menor que 10 anos:
+    <input id="filho_menor"> <br>
+    Filho com idade a partir de  10 anos:
+    <input id="filho_maior"> <br>
+
+    <button onclick="auxilio_filho()">Auxilio filho</button> <br>
+    <span id="mostrartela"></span>
+</body>
+</html>
+<script>
+
+    function auxilio_filho() {
+        var filho_novo = filho_menor.value * 30;
+        var filho_velho = filho_maior.value * 20;
+        var dinheiro = Number (filho_novo) + Number (filho_velho);
+
+
+        mostrartela.innerHTML = `Você tem ${filho_menor.value} filhos menores de 10 anos e ${filho_maior.value} a partir de 10 anos,
+        logo, seu Auxilio Filhos será de R$ ${dinheiro}`;
+    }
+</script>

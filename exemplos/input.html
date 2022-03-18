@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Input</title>
+</head>
+<body>
+    
+    Entre com o seu <b>primeiro nome:</b> 
+    <input id="ipt_nome">
+    <br>
+    Entre com o seu <b>ultimo nome:</b>
+    <input id="ipt_ultnome">
+    <br>
+    <button onclick="mostrar()">Mostrar</button> <br>
+    <span id="mostrartela"></span>
+</body>
+</html>
+<script>
+    function mostrar() {
+        alert ("O seu nome é: " + ipt_nome.value + ' ' + ipt_ultnome.value);
+        ipt_nome.value = '';
+
+        mostrartela.innerHTML = ("O seu nome é: " + ipt_nome.value  + ' ' + ipt_ultnome.value);
+        
+    }
+</script>

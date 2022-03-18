@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    Informe sua nota:
+    <input id="ipt_nota" autofocus>
+    <br><br>
+    <button onclick="mostrar()">opinião da vó</button>
+    <button onclick="mostrar2()">opinião da mãe</button> <br><br>
+    <span id="mostrartela"></span> <br>
+    
+</body>
+</html>
+
+<script>
+    function mostrar() {
+        mostrartela.innerHTML = `Muito bem que neto inteligente, poque tirou <b style="color: blue;"> ${ipt_nota.value} </b> <img style="width: 15%;" src="https://s2.glbimg.com/lxLgb_ft2BHKbMMeceSoGM50mnU=/0x34:1242x1020/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_59edd422c0c84a879bd37670ae4f538a/internal_photos/bs/2021/u/K/jqBBt4Sqa7RbPrtFBslw/whatsapp-image-2021-07-26-at-17.00.22.jpeg" alt="">`;
+    }
+
+    function mostrar2() {
+        mostrartela.innerHTML = `Não fez mais que a sua obrigação com essa nota <b style="color: blue;"> ${ipt_nota.value} </b> <img style="width: 15%;" src="https://media.istockphoto.com/vectors/my-mom-wearing-short-sleeve-clothes-is-angry-vector-id896856590" alt="">`;
+    }
+</script>

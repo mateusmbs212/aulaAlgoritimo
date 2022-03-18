@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=h3, initial-scale=1.0">
+    <title>Ex17Mi</title>
+</head>
+<body>
+    <center><h1>Oque faz um triatleta ?</h1></center>
+<br>
+<br> 
+    <center>
+        <button onclick="nada()">Nada</button>
+        <button onclick="corre()">Corre</button> <br><br>
+        <img id="img_nada" style="width: 25%; display: none;" src="https://i.pinimg.com/originals/07/a1/0a/07a10adeb02f8e8ba79dedd0d4008d5a.jpg" alt="">
+        <img id="img_corre" style="width: 25%; display: none;" src="https://www.treinus.com.br/blog/wp-content/uploads/2020/02/Corrida-de-rua.jpg" alt="">
+    </center>
+
+</html>
+
+<script>
+    function nada() {
+        img_nada.style.display = 'block';
+        img_corre.style.display ='none';
+
+    }
+    function corre() {
+        img_nada.style.display = 'none';
+        img_corre.style.display ='block';
+
+    }
+    function pedala() {
+        spanText.innerHTML = '<br> <img style="width: 25%;" src="https://www.saudevitalidade.com/wp-content/uploads/2020/08/Respiracao.gif" alt="">';
+    }
+</script>

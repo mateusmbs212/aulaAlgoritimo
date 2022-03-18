@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <center>
+        <img style="width: 25%;" src="https://financaspessoais.organizze.com.br/wp-content/uploads/2015/12/carteiravazia-1050x500.png" alt=""> <br><br>
+   
+    Quanto dinheiro terá daqui 6 meses:
+    <input id="ipt_dinheiro" autofocus> <br>
+    Quanto dinheiro terá daqui 3 anos:
+    <input id="ipt_dinheiro2" autofocus>
+    <br><br>
+    <button onclick="mostrar()">Como estarei no futuro ?</button> <br><br><br>
+    <span id="mostrartela"></span> <br>
+    </center>
+</body>
+</html>
+
+<script>
+    function mostrar() {
+        mostrartela.innerHTML = `<div> <b style="float: left;">o valor daqui 6 meses será de R$: ${ipt_dinheiro.value}  <img style="width: 25%;" src="http://financials.com.br/wp-content/uploads/2018/10/como-investir-com-pouco-dinheiro.jpeg"></b> <b style="float: right;">o valor daqui 3 anos será de R$: ${ipt_dinheiro2.value} <img style="width: 25%;" src="https://cdn.vezdavoz.com.br/wp-content/uploads/2019/05/sh_sonhar-com-muito-dinheiro_689447512.jpg"> </b> </div>`;
+    }
+
+</script>

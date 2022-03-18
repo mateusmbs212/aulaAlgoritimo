@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Valor da nota 1:
+    <input id="ipt_nota1" autofocus>
+    <br>
+    Valor da nota 2:
+   <input id="ipt_nota2">
+    <br>
+    <button onclick="mostrar()">Calcular média</button> <br><br> 
+    <span id="mostrartela"></span> <br>
+</body>
+</html>
+<script>
+    function mostrar() {
+        mostrartela.innerHTML = `Sua média é  ${ Number (ipt_nota1.value) + Number (ipt_nota2.value) /2 } `;
+    }
+</script>

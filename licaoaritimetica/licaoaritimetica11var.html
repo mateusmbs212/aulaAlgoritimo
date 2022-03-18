@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Calculcar IMC</h1>
+    Informe seu peso:
+    <input id="ipt_peso">
+    <br>
+    Informe sua altura:
+    <input id="ipt_altura">
+    <br>
+    <button onclick="imch()">IMC Homem</button>
+    <button onclick="imcm()">IMC Mulher</button>
+    <br><br>
+    <span id="mostrar"></span>
+</body>
+
+</html>
+<script>
+    function imch() {
+        var peso = ipt_peso.value;
+        var altura = ipt_altura.value;
+        var resultado = peso / (altura ** 2);
+        mostrar.innerHTML = `Seu IMC é: ${resultado.toFixed(1)}`;
+    }
+
+    function imcm() {
+        var peso = ipt_peso.value;
+        var altura = ipt_altura.value;
+        var porcentagem = (ipt_peso.value / (ipt_altura.value * ipt_altura.value) * 0.1)
+        mostrar.innerHTML = `Seu IMC é: ${(peso / (altura * altura)).toFixed(1) - porcentagem.toFixed(1)}`;
+
+    }
+</script>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=h3, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>Brasil x Alemanha</h3>
+    <span id="spanText"></span>
+    <br>
+    <br>
+    <button onclick="brasil()">Gol do Brasil</button><br><br>
+    <button onclick="alemanha()">Gol da Alemanha</button><br><br>
+    <button onclick="apagar()">Recomeçar partida</button><br><br>
+</body>
+</html>
+
+<script>
+    function brasil() {
+        spanText.innerHTML +='<br> <b style="color: green;">É golllllll do Brasil!!!!!!!</b> ';
+    }
+    function alemanha() {
+        spanText.innerHTML += '<br><b style="background-color: darkred; color: yellow;">É golllllll da Alemanha!!!!!!!!!</b>';
+    }
+    function apagar() {
+        spanText.innerHTML = '';
+    }
+</script>

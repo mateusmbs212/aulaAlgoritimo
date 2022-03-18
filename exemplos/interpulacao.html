@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Qual a sua <b>Cidade natal:</b>
+    <input id="ipt_cidade" autofocus>
+    <br>
+    Qual o seu <b>Ano de nascimento:</b>
+   <input id="ipt_idade">
+    <br>
+    <button onclick="mostrar()">cadastrar</button> <br><br> 
+    <span id="mostrartela"></span> <br>
+</body>
+</html>
+
+<script>
+    function mostrar() {
+        alert ("Você nasceu na cidade " + ipt_cidade.value + " em " + ipt_idade.value);
+        mostrartela.innerHTML = `Você nasceu na cidade ${ipt_cidade.value} em <u style = "color: red;"> ${ipt_idade.value} </u> `;
+    }
+    mostrartela.innerHTML = (" Você nasceu na cidade <b> " + ipt_cidade.value + '</b> em <u style = "color: red;">' + ipt_idade.value + "</u>");      
+
+
+</script>

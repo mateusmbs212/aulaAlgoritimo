@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Informe seu salario:
+    <input id="ipt_salario">
+    <br>
+
+    <button onclick="salario()">salário com desconto</button>
+    <br><br>
+    <span id="mostrar"></span>
+    
+    
+</body>
+</html>
+<script>
+     function salario() {
+        mostrar.innerHTML = `Apesar de seu salário bruto ser <span style="color: green;">R$ ${ ipt_salario.value }</span> após os descontos, 
+        você receberá <span style="color: red;">${ipt_salario.value - (ipt_salario.value * 0.1) - (ipt_salario.value * 0.2) - (ipt_salario.value * (1/30))}</span> R$  `;  
+   }
+</script>

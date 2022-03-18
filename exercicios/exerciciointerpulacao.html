@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Informe sua nota:
+    <input id="ipt_nota" autofocus>
+    <br><br>
+    <button onclick="mostrar()">opinião da vó</button>
+    <button onclick="mostrar2()">opinião da mãe</button> <br><br>
+    <span id="mostrartela"></span> <br>
+
+</body>
+</html>
+
+<script>
+    function mostrar() {
+        mostrartela.innerHTML = `Muito bem que neto inteligente, poque tirou <b style="color: blue;"> ${ipt_nota.value} </b>`;
+    }
+
+    function mostrar2() {
+        mostrartela.innerHTML = `Não fez mais que a sua obrigação com essa nota <b style="color: blue;"> ${ipt_nota.value} </b>`;
+    }
+</script>
