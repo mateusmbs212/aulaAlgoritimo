@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Escolha a estação</h2>
+    <select  id="imagens" onchange="verImagem()">
+        <option value="https://images5.alphacoders.com/568/thumb-1920-568865.jpg">Verão</option>
+        <option value="https://s1.1zoom.me/b5562/71/Autumn_Parks_Trees_Foliage_Avenue_565158_1920x1080.jpg">Outono</option>
+        <option value="https://s1.1zoom.me/b5050/718/Parks_Winter_Night_Trees_Snow_574950_1920x1080.jpg">Inverno</option>
+        <option value="https://s1.1zoom.me/b5069/927/Spring_Flowering_trees_Avenue_546182_1920x1080.jpg">Primavera</option>
+    </select> <br><br>
+    <span id="mostrartela"></span>
+    <img src="" id="imagem" style="width: 200px;" alt="">
+</body>
+</html>
+<script>
+    function verImagem() {
+        
+        imagem.src = imagens.value;
+    }
+</script>

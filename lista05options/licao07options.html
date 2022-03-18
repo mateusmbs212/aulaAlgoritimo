@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Escolha um time</h2>
+    <select  id="imagens">
+        <option value="https://seuladogeek.com.br/wp-content/uploads/2022/02/simbolo-santos-fc-png-e-vetor.png">Santos</option>
+        <option value="https://wallpapercave.com/wp/wp1974267.jpg">São Paulo</option>
+        <option value="https://i.pinimg.com/originals/2c/61/3c/2c613cd80d0297ae98834a1f7bc9d4e4.jpg">Corinthians</option>
+        <option value="https://palmeirasweb.com/wp-content/uploads/2020/07/palmeiras___bandeira_3_by_panico747-d2m5oke.jpg">Palmeiras</option>
+    </select> <br><br>
+    <button onclick="verImagem()">escolher time</button> <br><br>
+
+    <img src="" id="imagem" style="width: 600px;" alt="">
+</body>
+</html>
+<script>
+    function verImagem() {
+        
+        imagem.src = imagens.value;
+    }
+</script>
