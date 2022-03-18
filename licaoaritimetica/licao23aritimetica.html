@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <button onclick="clique()"><img style="height: 125px;" src="https://i.pinimg.com/originals/7a/52/ab/7a52abcb3865ebaba688904d063d34de.jpg" alt=""></button> <br><br>
+    Votos:<span id="vezes_gustavo">0</span> <br><br>
+
+    <button onclick="clique2()"><img style="height: 125px;" src="https://images4.alphacoders.com/642/thumb-1920-642592.jpg" alt=""></button> <br>
+    Votos:<span id="vezes_justin">0</span>  <br><br>
+
+    Votos total: <span id="vezes_total">0</span>
+</body>
+</html>
+<script>
+    var vez1 = 0;
+    var vez2 = 0;
+
+    function clique() {
+        vez1 += 1;
+        vezes_gustavo.innerHTML = vez1;
+        vezes_total.innerHTML = Number (vez1) + Number (vez2);
+    }
+
+    function clique2() {
+        vez2 += 1;
+        vezes_justin.innerHTML = vez2;
+        vezes_total.innerHTML = Number (vez1) + Number (vez2);
+    }
+</script>
