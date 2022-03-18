@@ -7,9 +7,9 @@
     <title>Document</title>
 </head>
 <body>
-    Votos na praça é nossa: <span id="vezes_praca">0</span> <br><br>
-    Votos no Zorra Total: <span id="vezes_zorra">0</span>  <br><br>
-    Votos na praça é nossa: <span id="vezes_total">0</span> <br><br>
+    <span style="color: green;"> Votos na <u>praça é nossa:</u>  <span id="vezes_praca">0</span></span> <br><br>
+    <span style="color: green;"> Votos no <u>Zorra Total:</u> <span id="vezes_zorra">0</span></span>  <br><br>
+    <span style="color: green;"> Votos na <u>praça é nossa:</u> <span id="vezes_total">0</span></span> <br><br>
     <button onclick="clique()">Votar no praça é nossa</button>
     <button onclick="clique2()">Votar no Zorra Total</button>
 </body>
@@ -19,7 +19,7 @@
     var vez2 = 0;
 
     function clique() {
-        vez1 += 6;
+        vez1 += 1;
         vezes_praca.innerHTML = vez1;
         vezes_total.innerHTML = Number (vez1) + Number (vez2);
     }
