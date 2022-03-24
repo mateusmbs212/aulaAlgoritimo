@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Paulopolis</h2>
+    <h4>considere o khw = R$ 0,85</h4>
+
+    quantida de khw consumida em um dia <br>
+    <input id="kwh">
+    <button onclick="calcular()">calcular conta de luz</button>
+    <span id="mostratela"></span>
+</body>
+</html>
+<script>
+
+    function calcular() {
+        var energia_mes = kwh.value * 0.85;
+        var conta = energia_mes * 30;
+        
+        if (conta < 100) {
+           var desconto = conta * 0.9
+           alert(`sua conta com desconto será de ${desconto}`)
+        }
+        if (conta > 100) {
+            alert(`sua conta será de R$${conta}`) 
+        }
+        
+    }
+</script>

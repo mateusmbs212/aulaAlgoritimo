@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    quantas latas de refri você toma por dia?<br>
+    <input id="qtd_latinha">
+    <button onclick="refri()">quantos refris ?</button> <br>
+    <span id="mostrartela"></span>
+</body>
+</html>
+<script>
+    var latinha = 0;
+    function refri() {
+        latinha = qtd_latinha.value * 365;
+
+        mostrartela.innerHTML = (`você tomou ${latinha} por dia em um ano `)
+
+        if (latinha >= 499) {
+            mostrartela.innerHTML = (`cuidado com a diabetes`)
+        }
+    }
+</script>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Pontos CNh</h1>
+
+    <input id="qtd_pontos" placeholder="adicionar pontos">
+    <button onclick="clicar()">verificar</button>
+</body>
+
+</html>
+<script>
+    function clicar() {
+        if (qtd_pontos.value > 20) {
+            alert('Você está com a CNH suspensa');
+        }
+    }
+</script>
