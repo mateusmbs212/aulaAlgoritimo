@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pizzaria</title>
+</head>
+
+<body>
+    <h1>Pizzaria</h1>
+    Sabor da Pizza:
+    <select id="sabor" autofocus>
+        <option value="23">Muzzarela à R$ 23,00</option>
+        <option value="24">Calabresa à R$ 24,00</option>
+        <option value="25">Atum à R$ 26,00</option>
+        <option value="30">Portuguesa à R$ 30,00</option>
+
+    </select>
+    <br> <br>
+    Incremento da Pizza:
+    <select id="incremento">
+        <option value="2.5">Presunto à R$ 2,50</option>
+        <option value="2">Queijo à R$ 2,00</option>
+        <option value="1.5">Ovo à R$ 1,50</option>
+        <option value="4">Palmito à R$ 4,00</option>
+        <option value="3.5">Frango à R$ 3,50</option>
+        <option value="3">Catupiry à R$ 3,00</option>
+
+    </select>
+    <select id="incremento2">
+        <option value="2.5">Presunto à R$ 2,50</option>
+        <option value="2">Queijo à R$ 2,00</option>
+        <option value="1.5">Ovo à R$ 1,50</option>
+        <option value="4">Palmito à R$ 4,00</option>
+        <option value="3.5">Frango à R$ 3,50</option>
+        <option value="3">Catupiry à R$ 3,00</option>
+    </select>
+
+    <select id="incremento3">
+        <option value="2.5">Presunto à R$ 2,50</option>
+        <option value="2">Queijo à R$ 2,00</option>
+        <option value="1.5">Ovo à R$ 1,50</option>
+        <option value="4">Palmito à R$ 4,00</option>
+        <option value="3.5">Frango à R$ 3,50</option>
+        <option value="3">Catupiry à R$ 3,00</option>
+    </select>
+    <br><br>
+    <button onclick="calcular()">Calcular o preço da pizza</button>
+    <br><br>
+    <span id="mostrar"></span>
+
+</body>
+
+</html>
+
+<script>
+    function calcular() {
+        var incr1 = Number(incremento.value)
+        var incr2 = Number(incremento2.value)
+        var incr3 = Number(incremento3.value)
+        var saborpreco = Number(sabor.value)
+        var total = incr1 + incr2 + incr3 + saborpreco;
+
+        mostrar.innerHTML = `A pizza era R$<b>${saborpreco.toFixed(2)}</b>, mas
+    foi acrescido um incremento de R$${incr1.toFixed(2)}, outro de R$${incr2.toFixed(2)}
+    e mais um de R$${incr3.toFixed(2)}. <br>
+    A Pizza custará um total de <u>R$</u><u style="color: green;"> ${total.toFixed(2)}</u>`
+    }
+
+</script>
