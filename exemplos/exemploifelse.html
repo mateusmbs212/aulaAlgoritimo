@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Aula IF ElSE calculo de multa</h2>
+
+    Entre com a quantidade de pontos da CNH
+    <input id="ipt_cnh"> <br><br>
+
+    <button onclick="calcular()"> calcular multa</button> <br><br>
+    <span id="mostrartela"></span>
+</body>
+</html>
+<script>
+    function calcular() {
+        var ax_multa = 0;
+
+        if (ipt_cnh.value >= 20) {
+            alert ("Carteira suspensa")
+            ax_multa = ipt_cnh.value * 87;
+        } else {
+            ax_multa = ipt_cnh.value * 78;
+           
+        }
+        mostrartela.innerHTML = (`o valor total de multas é de R$ ${ax_multa}`)
+    }
+</script>
