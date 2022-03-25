@@ -19,14 +19,16 @@
 <script>
   function calcular() {
     var energia_mes = kwh.value * 0.85;
+    var energia = kwh.value * 30;
     var conta = energia_mes * 30;
+    var desconto = conta * 0.9;
 
-    if (conta < 100) {
-      var desconto = conta * 0.9;
-      alert(`sua conta com desconto será de ${desconto}`);
+    if ( energia < 100) {
+     
+      alert(`sua conta com desconto será de ${desconto.toFixed(2)}`);
     }
-    if (conta > 100) {
-      alert(`sua conta será de R$${conta}`);
+    if (energia >= 100) {
+      alert(`sua conta será de R$${conta.toFixed(2)}`);
     }
   }
 </script>
