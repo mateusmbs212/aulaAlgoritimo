@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>Quantidade de homens</h3>
+    <input id="ipt_homem">
+
+    <h3>Quantidade de mulheres</h3>
+    <input id="ipt_mulher"> <br><br>
+
+    <button onclick="clicar()">Ligar elevador</button> <br><br>
+    <span id="mostrartela"></span>
+</body>
+</html>
+<script>
+    function clicar() {
+    var homem = Number (ipt_homem.value) * 90;
+    var mulher = Number (ipt_mulher.value) * 70;
+    var junto = homem + mulher;
+
+    if (junto  < 500) {
+        mostrartela.innerHTML = (`<span style="color: green;">Elevador vai se mover, pois está com ${junto} kg</span>`)
+    }
+    else {
+        mostrartela.innerHTML = (`<span style="color: red;">Alguém precisa descer. Precisa perder ${junto - 500} kg para mover o elevador</span>`)
+    }
+    }
+</script>
