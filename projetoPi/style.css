@@ -1,0 +1,36 @@
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.cabecalho {
+    background-color: #A9CF47;
+    border-radius: 40px  40px 20px 20px;
+}
+
+.container {
+    color: #ffff;
+    display: flex;
+    justify-content: space-between;
+}
+
+.container ul{
+    display: flex;
+    width: 600px;
+    justify-content: space-evenly;
+    list-style: none;
+}
+
+.cabecalho .container {
+    justify-content: space-around;
+    align-items: center;
+}
+
+.diagonal1 {
+    width: 100vw;
+    height: 100vh;
+  background: #A9CF47;
+  -webkit-transform: skew(20deg); /* Chrome, Opera */
+    -ms-transform: skew(20deg); /* IE */
+    transform: skew(70deg); /* Padrão */
+}

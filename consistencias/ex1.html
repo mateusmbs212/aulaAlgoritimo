@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <select  id="combo_box">
+        <option value="0">--Selecionar--</option>
+        <option value="1" >SP-Capital</option>
+        <option value="2">SP-iInterior</option>
+        <option value="3">Outros Estados</option>
+    </select>
+    <button onclick="verImagem()">Falar do local</button> <br><br>
+    <span id="mostrartela"></span>
+  
+</body>
+</html>
+<script>
+    function verImagem() {
+        if (combo_box.value == 0) {
+            alert("Escolher outra opção")
+        }
+        else {
+            if (combo_box.value == 1) {
+                mostrartela.innerHTML = (` <img style="width: 500px;" src="https://visitesaopaulo.com/wp-content/uploads/2021/06/AS00106-Ponte-Estaiada-scaled.jpg">
+                <h2>Os nascidos nesta cidade são Paulistanos<h2> 
+                   `)
+            }
+            if (combo_box.value ==2) {
+                mostrartela.innerHTML = (` <img style="width: 500px;" src="https://www.melhoresdestinos.com.br/wp-content/uploads/2021/07/interior-sao-paulo-botucatu.jpg">
+                <h2>Os nascidos nesta cidade são Paulistas<h2> `)     
+            }
+
+            if (combo_box.value == 3) {
+                mostrartela.innerHTML = (` <img style="width: 500px;" src="https://www.melhoresdestinos.com.br/wp-content/uploads/2019/08/rio-de-janeiro-capa2019-01.jpg">
+                <h2>Os nascidos nesta cidade não são nem Paulistas e nem Paulistanos<h2> `)     
+            }
+        }
+    }
+</script>

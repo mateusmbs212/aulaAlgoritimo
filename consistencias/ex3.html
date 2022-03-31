@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input id="ipt_nome" placeholder="Etre com o seu nome">
+    <input id="ipt_idade" placeholder="entre com a sua idade"> <br><br>
+    <button onclick="clicar()">cadastrar</button>
+    <button onclick="encerrar()">encerrar</button><br><br>
+     
+    <span id="mostrartela"></span>
+</body>
+
+</html>
+<script>
+    function clicar() {
+        var nome = ipt_nome.value;
+        var idade = Number(ipt_idade.value);
+
+        if (nome == 0) {
+            mostrartela.innerHTML = ("Nome invalido")
+        }
+
+        else {
+            if (idade < 0) {
+                mostrartela.innerHTML = ("idade invalida")
+            }
+            else {
+                if (idade > 80) {
+                    mostrartela.innerHTML = ("Procurar escola especial")
+                }
+                else {
+                    if (idade < 18) {
+                        alert(`este aluno tem que aguardar ${18 - idade} anos para tirar a CNH`)
+                    }
+                    else {
+                        if (idade >= 18) {
+                            mostrartela.innerHTML += (`${nome} ${idade} <br>`)  
+                        }
+                    }
+                }
+                
+            }
+        }
+
+    }
+   function encerrar() {
+       
+   } 
+</script>
