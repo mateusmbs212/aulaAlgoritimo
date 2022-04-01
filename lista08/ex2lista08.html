@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input id="ipt_renda" placeholder="Digite a renda mensal da sua famiilia">
+    <button onclick="clicar()">Analisar renda</button> <br><br>
+    <span id="mostrartela"></span>
+</body>
+
+</html>
+<script>
+    function clicar() {
+        var renda = ipt_renda.value;
+
+        if (renda <= 250) {
+            mostrartela.innerHTML = (`Classe E`);
+        } else {
+            if (renda <= 900) {
+                mostrartela.innerHTML = (`Classe D`);
+            }
+            else {
+                if (renda <= 2500) {
+                    mostrartela.innerHTML = (`Classe C`);
+                }
+                else {
+                    if (renda <= 9500) {
+                        mostrartela.innerHTML = (`Classe B`);
+                    }
+                    else {
+
+                        mostrartela.innerHTML = (`Classe A`);
+
+                    }
+                }
+            }
+        }
+    }
+</script>
