@@ -1,33 +1,54 @@
 <!DOCTYPE html>
 <html lang="pt">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
-    <select  id="ipt_tipo">
-        <option value="1">queijo</option>
-        <option value="2">cereal</option>
+    <select id="ipt_tipo">
+        <option value="selecionar">--Selecionar--</option>
+        <option value="queijo">queijo</option>
+        <option value="cereal">cereal</option>
     </select>
     <select id="ipt_mercado">
-        <option value="3">Geladeira</option>
-        <option value="4">Seca</option>
-        <button onclick="clicar()">Analisar</button> <br><br>
-        <span id="mostrartela"></span>
+        <option value="selecionar">--Selecionar--</option>
+        <option value="geladeira">Geladeira</option>
+        <option value="seca">Seca</option>
     </select>
+    <button onclick="clicar()">Analisar</button> <br><br>
+    <span id="mostrartela"></span>
 </body>
+
 </html>
 <script>
     function clicar() {
         var tipo = ipt_tipo.value;
         var mercado = ipt_mercado.value;
 
-        if (1 == 4) {
-           mostrartela.innerHTML = (`muito bem, queijos no lugar certo`); 
+        if (tipo == "queijo") {
+            if (mercado == "geladeira") {
+                mostrartela.innerHTML = (`muito bem, queijos no lugar certo`)
+            }
+            else {
+                mostrartela.innerHTML = (`Coloque o queijo na geladeira`)
+            }
+
         } else {
-            
+            if (tipo == "cereal") {
+                if (mercado == "seca") {
+                    mostrartela.innerHTML = (`muito bem, cerais na prateleira`)
+                }
+                else {
+                    mostrartela.innerHTML = (`tire os cereais da geladeira`)
+                }
+            }
         }
+
+
+
     }
 </script>
