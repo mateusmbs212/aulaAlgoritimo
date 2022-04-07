@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h3 id="ipt_h3">Valor guardado R$ 0,00</h3>
+    <span id="text"></span> <br><br>
+    <button onclick="guardar()">Guardar 5 reais</button>
+    <button onclick="gastar()">Gastar 10 reais</button>
+
+</body>
+
+</html>
+<script>
+    var saldo = 0;
+
+    function guardar() {
+        saldo += 5;
+        ipt_h3.innerHTML = `Valor guardado R$ ${saldo.toFixed(2)}`;
+
+        if (saldo >= 0 && saldo <= 100) {
+            text.innerHTML = `<span style="color: blue;"> Finanças OK!</span>`;
+        } else if (saldo > 100) {
+            text.innerHTML = `<span style="color: blue;"> Finanças OK!</span><br>#ostentação`;
+        } else if (saldo <= -20) {
+            text.innerHTML = `Quase o corinthians`
+        }
+        else {
+            text.innerHTML = `<span style="color: red;"> Finanças em perigo</span>`
+        }
+    }
+
+    function gastar() {
+        saldo -= 10;
+        ipt_h3.innerHTML = `Valor guardado R$ ${saldo.toFixed(2)}`;
+
+        if (saldo > 0 && saldo <= 100) {
+            text.innerHTML = `<span style="color: blue;"> Finanças OK!</span>`;
+        } else if (saldo > 100) {
+            text.innerHTML = `<span style="color: blue;"> Finanças OK!</span><br>#ostentação`;
+        } else if (saldo <= -20) {
+            text.innerHTML = `Quase o corinthians`
+        }
+        else {
+            text.innerHTML = `<span style="color: red;"> Finanças em perigo</span>`
+        }
+    }
+</script>

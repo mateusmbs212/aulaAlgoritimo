@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3 id="ipt_h3">Você já clicou 0 vezes</h3>
+    <span id="text"></span> <br><br>
+    <button onclick="clicar()">Clica neu</button>
+</body>
+</html>
+<script>
+var clique = 0;
+
+    function clicar() {
+        clique += 1;
+        ipt_h3.innerHTML = `Você já clicou ${clique} vezes `;
+
+        if (clique <= 5) {
+            text.innerHTML = `Dedo fraquinho, hein`;
+        } else if (clique > 5 && clique <= 10) {
+            text.innerHTML = `Dedo bom, mano`;
+        } else if (clique >= 11 && clique <=15) {
+            text.innerHTML = `Gosta de clicar, hein!`
+        }
+        else {
+            text.innerHTML = `Eita dedo nervoso!`
+        }
+    }
+</script>    

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input id="ipt_economia" placeholder="Digite valor economizado">
+    <button onclick="clicar()">Poder de compra</button> <br><br>
+    <span id="text"></span>
+</body>
+</html>
+<script>
+    function clicar() {
+        var economia = ipt_economia.value;
+
+        if (economia <= 0) {
+          text.innerHTML = `Nada de compras`;  
+        } else if (economia > 0 && economia <= 100) {
+            text.innerHTML = `Nada de compras<br>Viagem ida e volta para Praia Grande`; 
+        } else if (economia > 100 && economia < 4000) {
+            text.innerHTML = `Nada de compras<br>Viagem ida e volta para Praia Grande<br>Uma boa moto usada`;
+        } else {
+            text.innerHTML = `Nada de compras<br>Viagem ida e volta para Praia Grande<br>Uma boa moto usada<br>Mais alguma bobagem legal`;
+        }
+    }
+</script>

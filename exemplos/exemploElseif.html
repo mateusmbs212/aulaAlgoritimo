@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input id="ipt_gol" placeholder="digite quantidade de gols">
+    <input id="ipt_partida" placeholder="digite quantidade de partidas">
+    <button onclick="clicar()">Calcular média</button> <br><br>
+    <span id="text"></span>
+</body>
+</html>
+<script>
+    function clicar() {
+        var gol = ipt_gol.value;
+        var partida = ipt_partida.value;
+        var media = gol / partida;
+
+        if (media > 0.6) {
+            text.innerHTML = (`Você é um jogador acima da média`)
+        } else if (media <= 0.2) {
+            text.innerHTML = (`Você é um jogador a baixo da média`) 
+        } else {
+            text.innerHTML = (`você é um jogador na média`)
+        }
+    }
+</script>
