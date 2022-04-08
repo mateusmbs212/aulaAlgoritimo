@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>L10_E18</title>
+  </head>
+  <body>
+    <h2>Análise de desempenho de Alunos</h2>
+    Entre com a Nota: <input id="ipt_nota" autofocus /> <br />
+    Entre com a Frequência: <input id="ipt_frequencia" /> <br /><br />
+    <button onclick="analisar()">Analisar aluno</button>
+    <br /><br />
+    <div id="div_msg"></div>
+  </body>
+</html>
+<script>
+  function analisar() {
+    var nota = ipt_nota.value;
+    var frequencia = ipt_frequencia.value;
+
+    if (nota < 0 || nota > 10) {
+      alert("Onde já se viu nota < 0 e nota > 10");
+      div_msg.innerHTML = ``
+    } else if (frequencia < 0 || frequencia > 100) {
+      alert("Onde já se viu frequencia < 0 e frequencia > 100");
+      duv_msg.innerHTML = ``
+    }
+    if (nota >= 0 && nota <= 6) {
+      div_msg.innerHTML = `Aluno ficou abaixo da média<br>`;
+      if (frequencia > 75) {
+        div_msg.innerHTML += `Aluno aprovado por frequencia`;
+      } else {
+        div_msg.innerHTML += `Aluno reprovado por frequencia`;
+      }
+    }
+    if (nota > 6 && nota <= 8) {
+      div_msg.innerHTML = `Aluno ficou na média<br>`;
+      if (frequencia >= 75) {
+        div_msg.innerHTML += `Aluno aprovado por frequencia`;
+      } else {
+        div_msg.innerHTML += `Aluno reprovado por frequencia`;
+      }
+    }
+    if (nota > 8 && nota <= 10) {
+      div_msg.innerHTML = `Aluno ficou acima da média<br>`;
+      if (frequencia > 75) {
+        div_msg.innerHTML += `Aluno aprovado por frequencia`;
+      } else {
+        div_msg.innerHTML += `Aluno reprovado por frequencia`;
+      }
+    }
+
+    /* else if (nota > 6 && nota <= 8) {
+            div_msg.innerHTML = `Aluno ficou na média`
+        } else if (nota > 8 && nota <=10) {
+            div_msg.innerHTML = `Aluno ficou acima da média`
+        } else if (nota >= 0 || nota <= 6 && frequencia >= 75) {
+            div_msg.innerHTML += `Aluno ficou abaixo da média<br>Aluno aprovado por frequência`
+        } else if (frequencia >= 75) {
+            div_msg.innerHTML += `Aluno reprovado por frequência`
+        } */
+  }
+</script>

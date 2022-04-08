@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Qual o sabor do picolé ?
+    <select id="slt_sabor">
+        <option value="0">Espinafre</option>
+        <option value="1">Morango</option>
+        <option value="2">Feijoada</option>
+        <option value="3">Chocolate</option>
+        <option value="4">Terra&Tijolo</option>
+    </select>
+
+    <button onclick="clicar()">Vou tomar o picolé ?</button>
+</body>
+</html>
+<script>
+    function clicar() {
+        var sabor = Number(slt_sabor.value);
+
+        if (sabor == 1 || sabor == 3) {
+           alert("Oba, vou tomar o picolé") 
+        } else {
+            alert("Deu ruim, não gosto desse sabor")
+        }
+    }
+</script>

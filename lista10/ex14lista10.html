@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <select id="slt_passagem">
+        <option value="0">--Selecione--</option>
+        <option value="1">Comum</option>
+        <option value="2">Estudante</option>
+        <option value="3">Idsoso/PNE</option>
+    </select>
+
+    <select id="slt_int">
+        <option value="0">--Selecione--</option>
+        <option value="1">Pasagem única</option>
+        <option value="2">Passagem integração</option>
+    </select>
+
+    <button onclick="clicar()">Simular Preço</button>
+    <div id="id_msg"></div>
+</body>
+</html>
+<script>
+    function clicar() {
+        var passagem = slt_passagem.value;
+        var integra= slt_int.value;
+        var inteira = 4.40
+        var intIntegracao = 5.90
+        var meia = 4.40 / 2;
+        var integracao = 5.90 / 2
+        var velho = 0;
+
+        if (passagem == 1 && integra == 1) {
+            id_msg.innerHTML = (`R$ ${inteira.toFixed(2)}`)
+        } else if (passagem == 1 && integra == 2) {
+            id_msg.innerHTML = (`R$ ${intIntegracao.toFixed(2)}`) 
+        } else if (passagem == 2 && integra == 1) {
+            id_msg.innerHTML = (`R$ ${meia.toFixed(2)}`) 
+        } else  if (passagem == 2  && integra == 2){
+            id_msg.innerHTML = `R$ ${integracao.toFixed(2)}`
+        } else if (passagem == 3 && integra == 1 || integra == 2) {
+            id_msg.innerHTML = `R$ ${velho.toFixed(2)}`
+        }
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    alert('Matheus,matheus,matheus')
+</script>

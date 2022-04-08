@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <select id="slt_pagamento">
+        <option value="0">--Selecione--</option>
+        <option value="1">Dinheiro</option>
+        <option value="2">Cartão de débito</option>
+        <option value="3">cartão de crédito</option>
+        <option value="4">Boleto</option>
+    </select>
+    
+    <button onclick="clicar()">Analisar compra</button>
+    <div id="id_msg"></div>
+</body>
+</html>
+<script>
+    function clicar() {
+        var pagamento = slt_pagamento.value
+
+        if (pagamento == 1 || pagamento == 2) {
+           id_msg.innerHTML = `Você terá que pagar a vista` 
+        } else {
+            id_msg.innerHTML = `Pagamento poderá ser parcelado`
+        }
+    }
+</script>
