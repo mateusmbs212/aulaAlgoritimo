@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Entre com o primeiro número <input id="ipt_num1">
+    Entre com o segundo número <input id="ipt_num2"> <br>
+    <button onclick="btn()">Ver números</button>
+    <div id="div_msg"></div>
+</body>
+</html>
+<script>
+    function btn() {
+    var primeiro = Number(ipt_num1.value);
+    var ultimo = Number(ipt_num2.value);
+
+    div_msg.innerHTML = 'Números pares <br>'
+
+    while (primeiro <= ultimo) {
+
+        if (primeiro % 2 == 0 ) {
+            div_msg.innerHTML += `${primeiro} <br>` 
+        }
+        primeiro ++ 
+    }
+ }
+</script>

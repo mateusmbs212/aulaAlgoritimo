@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    Entre com o limite inferior <input id="ipt_inf">
+    Entre com o número superior <input id="ipt_sup"> <br>
+    <button onclick="btn()">Ver números</button>
+    <div id="div_msg"></div>
+</body>
+
+</html>
+<script>
+    
+    function btn() {
+       var inicial = Number(ipt_inf.value);
+       var maximo = Number(ipt_sup.value);
+
+       div_msg.innerHTML = ''
+
+       while (inicial <= maximo) {
+           div_msg.innerHTML += `${inicial} <br>`
+           inicial ++
+       }
+    }
+</script>
