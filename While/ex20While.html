@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Trajeto da facul</h2>
+    <input id="ipt_onibus" placeholder="quantos ônibus precisa pegar"> <br>
+    <input id="ipt_trem" placeholder="quantos trens precisa pegar"> <br>
+    <input id="ipt_metro" placeholder="quantos metrôs precisa pegar"> <br>
+    <button onclick="btn()">#Partiu Trajeto</button>
+    <div id="div_msg"></div>
+    <div id="div_msg2"></div>
+    <div id="div_msg3"></div>
+   
+    
+</body>
+</html>
+<script>
+    function btn() {
+        div_msg.innerHTML = ''
+        ax_num = 1;
+        ax_num2 = 1;
+        ax_num3 = 1;
+
+        while (ax_num <= ipt_onibus.value) {
+            div_msg.innerHTML += `<span style="color: red;">Pegando o ${ax_num}º buzão</span> <br>`
+            ax_num ++;  
+        }
+
+        while (ax_num2 <= ipt_trem.value) {
+            div_msg2.innerHTML += `<span style="color: green;">Pegando o ${ax_num2}º trem</span> <br>`
+            ax_num2 ++;  
+        }
+
+        while (ax_num3 <= ipt_metro.value) {
+            div_msg3.innerHTML += `<span style="color: blue;">Pegando o ${ax_num3}º metro</span> <br>`
+            ax_num3 ++;  
+        }
+    }
+</script>

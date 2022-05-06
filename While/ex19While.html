@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2>~Carona do motorista</h2>
+    
+    <input id="ipt_pessoas" placeholder="Quantas pessoas vão entrar no carro">
+    <input id="ipt_lugar" placeholder="Quantas pessoas cabem no carro">
+    <button onclick="btn()">#PartiuCarona</button>
+    <div id="div_msg"></div>
+   
+</body>
+
+</html>
+<script>
+
+
+    function btn() {
+        var ax_num = 1;
+        div_msg.innerHTML = ``
+        
+        while (ax_num <= ipt_pessoas.value) {
+
+            if (ax_num <= 1) {
+                div_msg.innerHTML += ` Entrou o ${ax_num}º passageiro que é o motorista<br>`
+                ax_num++
+            }
+            else if (ax_num <= ipt_lugar.value) {
+
+                div_msg.innerHTML += ` Entrou o ${ax_num}º passageiro<br>`
+                ax_num++
+            } else if (ax_num > ipt_lugar.value) {
+
+                div_msg.innerHTML += ` o ${ax_num}º passageiro terá que esperar<br>`
+                ax_num++
+            }
+
+        }
+    }
+</script>
