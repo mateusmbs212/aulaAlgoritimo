@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Numero máximo</h2>
+    <input id="ipt_numero" placeholder="Digite o número máximo">
+    <button onclick="btn()">Contar</button>
+    <div id="div_msg"></div>
+</body>
+</html>
+<script>
+    function btn() {
+        for (var index = 5; index <= 100; index++) {
+            if (ipt_numero.value <= 100) {
+                div_msg.innerHTML += `${index}<br>`  
+            } else {
+                div_msg.innerHTML = `Digite um número menor que 100`  
+            }
+            
+            
+        }
+    }
+</script>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Contador 99 a 1</h2>
+    <button onclick="btn()">Conte 99 a 1</button>
+    <div id="div_msg"></div>
+</body>
+</html>
+<script>
+    function btn() {
+        for (var index = 99; index >= 1; index--) {
+            div_msg.innerHTML += `${index}<br>`
+            
+        }
+    }
+</script>

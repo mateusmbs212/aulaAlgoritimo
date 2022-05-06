@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Numero maior e menor</h2>
+    <input id="ipt_menor" placeholder="Digite o número menor">
+    <input id="ipt_maior" placeholder="Digite o número Maximo">
+    <button onclick="btn()">Contar</button>
+    <div id="div_msg"></div>
+</body>
+</html>
+<script>
+    function btn() {
+        if (ipt_menor.value <= 1 || ipt_maior.value >= 100) {
+          div_msg.innerHTML = `O menor número tem que ser maior que 1 e o maior número tem que ser menor que 100`  
+        } else {
+            for (var index = ipt_menor.value; index <= ipt_maior.value; index++) {
+                div_msg.innerHTML += `${index}<br>`;
+            }
+        }
+        
+    }
+</script>
