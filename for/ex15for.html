@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Depósito banco</h2>
+
+    <input id="ipt_quant" placeholder="Quantos depósitos fez no banco">
+    <input id="ipt_dinheiro" placeholder="Digite o valor dos depósitos">
+    <button onclick="btn()">Acompanhar grana</button>
+    <div id="div_msg"></div>
+</body>
+</html>
+<script>
+      
+    function btn() {
+        var saldo = 0;  
+        var quantidade = Number(ipt_quant.value);
+        var dinheiro = Number(ipt_dinheiro.value);
+       
+        div_msg.innerHTML = ''
+
+        for (var index = 1; index <= quantidade; index++) {
+            if (index % 3 == 0) {
+                saldo += dinheiro
+                saldo = saldo * 1.01;
+              div_msg.innerHTML += `${index}º Mês: R$: ${(saldo).toFixed(2)}<br>`;  
+              
+            } else {
+                saldo += dinheiro; 
+                div_msg.innerHTML += `${index}º Mês: R$: ${(saldo).toFixed(2)}<br>`; 
+                
+            }
+            
+        }
+        div_msg.innerHTML += `Total guardado: R$:${(saldo).toFixed(2)}`
+    }
+</script>

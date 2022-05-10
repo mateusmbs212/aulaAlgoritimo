@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <span>Informe sua idade:</span>
+    <input type="text" name="" id="iptIdade" onkeyup="onc()">
+    <div id="div_msg"></div>
+</body>
+</html>
+<script>
+    function onc() {
+        var idade = iptIdade.value;
+        div_msg.innerHTML = ''
+        for (var index = 1; index <= idade; index++) {
+          if (index > 0 && index <= 4) {
+            div_msg.innerHTML += `${index} anos (Primeira infância)<br>`;  
+          } else if (index > 4 && index <= 6) {
+            div_msg.innerHTML += `${index} anos (Pré escolar)<br>`;  
+          }  else if (index > 6 && index <= 10) {
+            div_msg.innerHTML += `${index} anos (Segunda Infância)<br>`; 
+          } else if (index > 10 && index <= 18) {
+            div_msg.innerHTML += `${index} anos (Adolescência)<br>`;   
+          } else if (index > 18 && index <= 50) {
+            div_msg.innerHTML += `${index} anos (Adulto)<br>`;  
+          } else if (index > 50 && index <= 100) {
+            div_msg.innerHTML += `${index} anos (Melhor idade)<br>`; 
+          } else if (index > 100) {
+            div_msg.innerHTML += `${index} anos (Matusalém)<br>`;  
+          }
+           
+        }
+        div_msg.innerHTML += `<br>idade informada: ${idade} anos`
+    }
+</script>
