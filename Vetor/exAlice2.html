@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Professora Alice</h2>
+
+    <input type="text" id="ipt_nome" placeholder="Digite um nome">
+    <button onclick="btn_cadastro()">Cadastrar</button> <br><br>
+    <button onclick="btn_mostrar()">Mostrar</button>
+    <div id="div_msg"></div>
+</body>
+</html>
+<script>
+    var vt_professores = []; 
+
+    function btn_cadastro() {
+        vt_professores.push(ipt_nome.value);
+        ipt_nome.value = '';
+    }
+
+ function btn_mostrar() {
+        for (var index = vt_professores.length - 1; index >= 0; index--) {
+            div_msg.innerHTML += ` ${vt_professores[index]}<br>`;         
+        }
+    }
+</script>
