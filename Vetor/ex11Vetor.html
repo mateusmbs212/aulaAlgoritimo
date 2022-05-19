@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input placeholder="Digite o preço da banana" id="ipt_preco">
+    <button onclick="cadastrar()">Cadastrar</button>
+    <button onclick="atualizar()">Atualizar estoque</button>
+
+    <div id="div_msg"></div>
+</body>
+</html>
+<script>
+    var vt_preco = [];
+    var preco_total = 0;
+
+    function cadastrar() {
+        var preco = Number(ipt_preco.value);
+        vt_preco.push(ipt_preco.value);
+        ipt_preco.value = ``
+
+        preco_total += preco;
+    }
+
+    function atualizar() {
+        div_msg.innerHTML = `Você tem ${vt_preco.length} produtos cadastrados em estoque <br> Seu estoque vale R$${preco_total.toFixed(2)}`
+    }
+
+
+</script>
