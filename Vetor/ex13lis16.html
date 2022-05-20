@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <select name="" id="slcPartidas">
+        <option value="0">--Selecione uma opção--</option>
+        <option value="1">Vitória</option>
+        <option value="2">Empate</option>
+        <option value="3">Derrota</option>
+    </select>
+    <input type="text" id="iptVerificar" onkeyup="chVerificar()">
+    <button onclick="btnRegistrar()">Registrar jogo</button>
+    <div id="msg"></div>
+    <div id="msg2"></div>
+
+
+    <script>
+        var vitorias = 0;
+        var derrotas = 0;
+        var empates = 0;
+        var armazemPartidas = [];
+        function btnRegistrar() {
+            var partidas = slcPartidas.value;
+            armazemPartidas.push(partidas);
+            for (let i = 0; i < armazemPartidas.length; i++) {
+                    
+            }
+            
+            if (partidas == 1) {
+                vitorias++;
+            } else if (partidas == 2) {
+                empates++;
+            } else if (partidas == 3) {
+                derrotas++;
+            }
+
+            var vitoriasAlt = vitorias * 3;
+            var pontuaçãoTotal = vitoriasAlt + empates
+            var totalPontosVitorias = armazemPartidas.length * 3;
+
+            msg.innerHTML = `O time teve: ${vitorias} vitórias, ${empates} empates, ${derrotas} derrotas<br>
+                             Pontuação total: ${pontuaçãoTotal} pontos<br>
+                            Aproveitamento: ${(pontuaçãoTotal / totalPontosVitorias * 100).toFixed(2)}%`;
+            
+        }
+
+        function chVerificar() {
+            if (armazemPartidas[iptVerificar.value -1 ] == 1) {
+                msg2.innerHTML = `No ${iptVerificar.value} º jogo, o time ganhou ` 
+            } else if (armazemPartidas[iptVerificar.value -1 ] == 2) {
+                msg2.innerHTML = `No ${iptVerificar.value} º jogo, o time empatou ` 
+            } else if (armazemPartidas[iptVerificar.value -1 ] == 3) {
+                msg2.innerHTML = `No ${iptVerificar.value} º jogo, o time perdeu` 
+            } else {
+                
+                msg2.innerHTML = `Não foi cadastrado um ${iptVerificar.value}º jogo`
+            }
+        }
+    </script>
+</body>
+</html>

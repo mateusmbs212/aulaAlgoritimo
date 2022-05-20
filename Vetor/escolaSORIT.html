@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sorit</title>
+</head>
+<body>
+    <h2>Escola SORIT</h2>
+    Entre com a idade do aluno: <input id="ipt_idade">
+    <button onclick="cadastrar()">Cadastrar</button> <br><br>
+
+    Intervalo de ocorrências para análise
+    <input id="ipt_ocor_de"> <input id="ipt_ocor_ate"> 
+    <button onclick="ocorrencias()">Analisar Ocorrências</button> <br>
+    
+    Intervalo de idades para análise
+    <input id="ipt_idade_de"> <input id="ipt_idade_ate"> 
+    <button onclick="idades()">Analisar Idades</button> <br><br>
+
+    <div id="div_msg"></div>
+    
+</body>
+</html>
+<script>
+    var vt_idades = [];
+    function cadastrar() {
+
+         
+        if (ipt_idade.value < 18) {
+           alert("Idade inferior a permitida")  
+        } else if (ipt_idade.value > 64 && ipt_idade.value <= 80) {
+            vt_idades.push(Number(ipt_idade.value));
+            alert("Associação permitida mas com restrição")
+        } else if (ipt_idade.value > 80) {
+            alert("idade superior a permitida")  
+        }   else {
+            vt_idades.push(Number(ipt_idade.value)); 
+        }
+    
+        div_msg.innerHTML = ``;
+        for (var index = vt_idades.length - 1; index >= 0; index--) {
+            if (ipt_idade.value >= 18 || ipt_idade.value <= 80) {
+                div_msg.innerHTML += ` ${vt_idades[index]}<br>`;
+            }
+                    
+        }
+    }
+    function ocorrencias() {
+    
+        }
+           
+    function idades() {
+        
+    }
+</script>
