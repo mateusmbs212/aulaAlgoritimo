@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tênis Clube</title>
+    <style>
+      body {
+        display: flex;
+        align-items: stretch;
+      }
+
+      body div:first-child,
+      body div:nth-of-type(2) {
+        padding: 8px;
+        border: 2px solid rgba(0, 0, 0, 0.2);
+      }
+
+      body div:nth-of-type(2) {
+        flex-grow: 1;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <h3>Registrar partidas</h3>
+      Número de partidas: <input id="input_qtd_partidas" /><br />
+      Pontos Jogador 1: <input id="input_pts_primeiro_jogador" /> <br />
+      Pontos Jogador 2: <input id="input_pts_segundo_jogador" /> <br />
+      <button onclick="realizar_partida()">Realizar partida</button>
+      <h3>Informe as partidas que deseja relembrar</h3>
+      Início: <input id="input_inicio_intervalo" /> Fim:
+      <input id="input_fim_intervalo" />
+      <button onclick="relembrar_partidas()">Relembrar</button>
+      <h3>Relembrar partidas por jogador</h3>
+      Jogador:
+      <select id="select_relembrar_por_jogador">
+        <option value="1">Jogador 1</option>
+        <option value="2">Jogador 2</option>
+      </select>
+      <button onclick="relembrar_por_jogador()">Relembrar</button>
+    </div>
+    <div>
+      <h3>Painel</h3>
+      <div id="div_painel"></div>
+     <!--  <div id="div_total"></div> -->
+    </div>
+  </body>
+</html>
+<script>
+  var lista_jogador_um = []
+  var lista_jogador_dois = []
+  var c1 = 0
+  var maior_um = 0
+  var maior_dois = 0
+  function realizar_partida(){
+    var partidas = Number(input_qtd_partidas.value)
+    var primeiro = Number(input_pts_primeiro_jogador.value)
+    var segundo = Number(input_pts_segundo_jogador.value)
+    var total_um = 0
+    var total_dois = 0
+    if(partidas <= 0 ){
+      alert("Número de partidas inválido")
+    }
+    if (c1 >=partidas){
+        alert("Número de partidas excedido")
+      }
+    else{
+      lista_jogador_um.push(primeiro)
+      lista_jogador_dois.push(segundo)
+      div_painel.innerHTML += `<br> ${c1 + 1}º Rodada <br> Jogador 1:${lista_jogador_um[c1]} <br> Jogador 2:${lista_jogador_dois[c1]} <br>`
+      c1++
+      for(var c = 0; c < lista_jogador_um.length; c++){
+        total_um = total_um + lista_jogador_um[c]
+        total_dois = total_dois + lista_jogador_dois[c]
+      }
+      div_painel.innerHTML += `Total Jogador um: ${total_um} <br> Total Jogador dois:${total_dois}`
+    }
+    
+    for(var c10 = 0; c10 < lista_jogador_um.length; c10++){
+            if (lista_jogador_um[c10] >= maior_um){
+                maior_um = lista_jogador_um[c10]     
+            }
+        }
+    
+        for(var c11 = 0; c11 < lista_jogador_dois.length; c11++){
+            if (lista_jogador_dois[c11] >= maior_dois){
+                maior_dois = lista_jogador_dois[c11]     
+            }
+        }
+  }
+  
+  function relembrar_partidas(){
+    div_painel.innerHTML = ""
+    var inicio_intervalo = Number(input_inicio_intervalo.value)
+    var fim_intervalo = Number(input_fim_intervalo.value)
+    for (var c2 = inicio_intervalo - 1; c2 <= fim_intervalo - 1; c2++){
+      div_painel.innerHTML += `${c2 + 1}º Rodada <br> Jogador 1:${lista_jogador_um[c2]} <br> Jogador 2:${lista_jogador_dois[c2]} <br>`
+    }
+  }
+
+  function relembrar_por_jogador(){
+    div_painel.innerHTML = ""
+    var select = select_relembrar_por_jogador.value
+    if(select == 1){
+      for (var c3 = 0; c3 < lista_jogador_um.length; c3++){
+        div_painel.innerHTML += `${c3 + 1}º Rodada <br> Jogador 1:${lista_jogador_um[c3]} <br>`
+      }
+      div_painel.innerHTML += `Maior pontuação: ${maior_um}`
+    }
+      else if(select == "2"){
+      for (var c4 = 0; c4 < lista_jogador_dois.length; c4++){
+        div_painel.innerHTML += `${c4 + 1}º Rodada <br> Jogador 2:${lista_jogador_um[c4]} <br> `
+      }
+      div_painel.innerHTML += `Maior pontuação: ${maior_dois}`
+    } 
+  }
+</script>

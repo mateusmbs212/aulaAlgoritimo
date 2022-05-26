@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Altura de atleta</title>
+</head>
+<body>
+    <center>
+        <h2>Processo de seleção de novos atletas</h2>
+        <br><br>
+        <div id="div_none1" style="display: block;">
+        Qual o intervalo de altura desejada para pilotos:
+        <input id="ipt_altinicialpiloto" placeholder="altura inicial">
+        <input id="ipt_altfinalpiloto" placeholder="altura final">
+        <br><br>
+        Qual o intervalo de altura desejada para jogadores de basquete:
+        <input id="ipt_altinicialbasquete" placeholder="altura inicial">
+        <input id="ipt_altfinalbasquete" placeholder="altura final">
+        <br><br>
+        Selecione a sua modalidade:
+        <br>
+        </div>
+        <button onclick="bt_selecionar()">Selecionar</button>
+        <div id="div_none2" style="display: none;">
+        <h4>Critério de seleção de piloto: altura entre 1.00 e 1.50</h4>
+        <h4>Critério de selção de jogador de basquete: altura de 1.50 à 2.20</h4>
+        <br><br>
+        Digite o seu nome:
+        <br>
+        <input id="ipt_nome" placeholder="ex.: João">
+        <br>
+        Digite a sua altura:
+        <br>
+        <input id="ipt_altura" placeholder="ex.: 1.76">
+        <br><br>
+            <select id="sel_modalidade">
+                <option value="1">--Escolher modadlidade--</option>
+                <option value="2">Basquete</option>
+                <option value="3">Piloto</option>
+           </select>
+        <br>
+        <button onclick="bt_analise()">Analisar</button>
+        <span id="s_msg"></span>
+        </div>
+    </center>
+</body>
+</html>
+<script>
+    function bt_selecionar() {
+        var v_inipiloto = ipt_altinicialpiloto.value
+        var v_finpiloto = ipt_altfinalpiloto.value
+        var v_inibasq = ipt_altinicialbasquete.value
+        var v_finbasq = ipt_altfinalbasquete.value
+        div_none1.style.display = "none";
+        div_none2.style.display = "block";
+        if (v_inipiloto <= 1.00 && v_finpiloto <1.50 ) {
+            alert (`Intervalo de altura negado`)
+        } else if (v_inibasq <=1.50 && v_finbasq >= 2.20) {
+            alert (`Intervalo de altura negado`)
+        } 
+    }
+    function bt_analise() {
+        var v_nome = ipt_nome.value
+        var v_alt = ipt_altura.value
+        var v_selmod = sel_modalidade.value
+        if (v_alt >=1.00 && v_alt <=1.50 && v_selmod == 3) {
+            s_msg.innerHTML = `O candidato ${v_nome} com a altura ${v_alt} participará 
+            do processo de seleção de piloto`
+        } else if (v_alt <1.00 && v_alt >1.50 && v_selmod == 3) {
+            s_msg.innerHTML = `Infelizmente o candidato ${v_nome} com altura de ${v_alt}
+            não atende os requisitos`
+        } else if (v_alt >=1.50 && v_alt <=2.20 && v_selmod == 2) {
+            s_msg.innerHTML = `O candidato ${v_nome} com a altura ${v_alt} participará 
+            do processo de seleção de basquete`
+        } else if (v_alt <1.50 && v_alt >2.20 && v_selmod == 2) {
+            s_msg.innerHTML = `Infelizmente o candidato ${v_nome} com altura de ${v_alt}
+            não atende os requisitos`
+        } else {
+            s_msg.innerHTML = `Selecione uma opção`
+        }
+    }
+    // Professor, tive bastante dificuldade nesse exercício, na questão de entender o 
+    // enunciado, fiz da forma que achei que seria, porém agora no final da última
+    // function não consigo rodar a mensagem no span
+</script>

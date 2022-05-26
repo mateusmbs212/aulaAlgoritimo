@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>desafio</title>
+</head>
+
+<body>
+    <!-- PARTE 1 -->
+    <h1>ASSOSICAÇÃO SORIT</h1>
+    informe a idade: <input type="text" id="idade_input">
+    <br>
+    <button onclick="cad()">Cadastrar</button>
+    <br>
+    <span id="msg"></span>
+    <br>
+
+    <!--PARTE 2 -->
+    Intervalo de ocorrência: <input type="text" id="menorInt_input" placeholder="menor">
+    <input type="text" id="maiorInt_input" placeholder="maior">
+    <br>
+    <button onclick="analise()">Analisar ocorrencia</button>
+    <br>
+    <span id="ocorrencia"></span>
+    <br>
+
+    <!-- PARTE 3 -->
+    Intervalo de idade: <input type="text" id="menorId_input" placeholder="menor">
+    <input type="text" id="maiorId_input" placeholder="maior">
+    <br>
+    <button onclick="anal_idade()">Analisar idades</button>
+    <br>
+    <span id="final"></span>
+
+</body>
+
+</html>
+
+<script>
+    //  PARTE 1
+    var vt_idade = []
+    var cont = 0
+    function cad() {
+
+        var idade = Number(idade_input.value)
+        idade_input.value = ''
+
+        if (idade < 18) {
+            alert("idade inferior a permitida")
+        }
+
+        if (idade > 80) {
+            alert("idade superior à permitida")
+        }
+
+        else {
+            if (idade >= 18 && idade <= 80) {
+                if (idade >= 65 && idade <= 80) {
+                    alert("Associação permitida, mas com restrição")
+                }
+                vt_idade.push(idade)
+                msg.innerHTML = ''
+                for (var index = vt_idade.length - 1; index >= 0; index--) {
+                    msg.innerHTML += `${vt_idade[index]}<br>`
+
+                }
+            }
+        }
+    }
+
+    // PARTE 2
+    var maiorIdade = 0
+    var menorIdade = 9999999
+    var somaIdade = 0
+    var contMedia = 0
+
+    function analise() {
+
+        var menorInt = Number(menorInt_input.value)
+        var maiorInt = Number(maiorInt_input.value)
+
+        if (vt_idade.length == 0) {
+            alert("Antes de Analisar faça o cadastro das idades")
+        }
+        else {
+            if (menorInt >= maiorInt) {
+                alert("Informar o intervalo de ocorrências corretamente")
+            }
+            else {
+
+                for (var index = menorInt - 1; index < maiorInt; index++) {
+
+                    if (vt_idade[index] > maiorIdade) {
+                        maiorIdade = vt_idade[index]
+                    }
+                    if (vt_idade[index] < menorIdade) {
+                        menorIdade = vt_idade[index]
+                    }
+                    contMedia += 1
+                    somaIdade += vt_idade[index]
+
+                    var media = somaIdade / contMedia
+
+                    ocorrencia.innerHTML = `Inicial: ${menorInt} Final: ${maiorInt} <br><br>
+
+                    Resumo do intervalo de ocorrências <br>
+
+                    Menor Idade do intervalo: ${menorIdade} <br>
+
+                    Maior Idade do intervalo: ${maiorIdade} <br>
+
+                    Qtde de idades cadastradas no intervalo: ${index + 1} <br>
+
+                    Média das idades do intervalo: ${media.toFixed(2)} <br>`
+                }
+            }
+        }
+
+    }
+
+    // PARTE 3
+
+    var MAIORIDADE = 0
+    var MENORIDADE = 9999999999999999
+    var somaIdade3 = 0
+    var contMEDIA = 0
+    var vt_ocorr = []
+    function anal_idade() {
+
+        var menorId = Number(menorId_input.value)
+        var maiorId = Number(maiorId_input.value)
+
+        if (vt_idade.length == 0) {
+            alert("Antes de Analisar faça o cadastro das idades")
+        }
+        else {
+            if (menorId >= maiorId) {
+                alert("Informar o intervalo de ocorrências corretamente")
+            }
+            else {
+                for (var index = 0; index < vt_idade.length; index++) {
+
+
+                    if (vt_idade[index] >= menorId && vt_idade[index] <= maiorId) {
+
+                        if (vt_idade[index] > MAIORIDADE) {
+                            MAIORIDADE = vt_idade[index]
+                        }
+                        if (vt_idade[index] < MENORIDADE) {
+                            MENORIDADE = vt_idade[index]
+                        }
+
+                        vt_ocorr.push(vt_idade[index])
+
+                        contMEDIA += 1
+                        somaIdade3 += vt_idade[index]
+                        var mediaIdade = somaIdade3 / contMEDIA
+
+                        final.innerHTML = `Resumo do intervalo de idades <br>
+                            Inicial: ${menorId} Final: ${maiorId} <br>
+                            Menor Idade do intervalo: ${MENORIDADE} <br>
+                            Maior Idade do intervalo: ${MAIORIDADE} <br>
+                            Qtde de idades cadastradas no intervalo: ${vt_ocorr.length} <br>
+                            Média das idades do intervalo: ${mediaIdade.toFixed(2)} <br>
+                            Primeira ocorrência que atendeu o intervalo: ${vt_ocorr[0]} <br>
+                            Última ocorrência que atendeu o intervalo: ${vt_ocorr[vt_ocorr.length - 1]}<br>
+                            
+                            lista de ocorrencias que atenderam o intervalo: ${vt_ocorr} `
+                    }
+
+                }
+
+            }
+        }
+
+    }
+
+</script>
+
+
